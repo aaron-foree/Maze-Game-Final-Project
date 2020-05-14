@@ -1,0 +1,13 @@
+#sprite {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url("sprite.png");
+}
+
+#maze {
+    width: 500px;
+    height: 500px;
+    background-image: url("level1.png");
+    position: relative;
+}
