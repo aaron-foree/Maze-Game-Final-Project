@@ -1,39 +1,15 @@
 <html>
+
 <head>
     <link REL="stylesheet" HREF="./final_app.css" />
     <title>Maze Game</title>
 </head>
 
 <body>
-
-    <div id="maze">
+    <div class="container">
         <div id="sprite"></div>
+        <canvas id="maze" width="500" height="500"> </canvas>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
-
-$(document).ready(() => {
-  let $target = $("#maze");
-  let $source = $("#sprite");
-});
-
-function testCollision(s, t) {
-  // This tests to see if the two boxes overlap
-  if (
-    s.position().left < t.position().left + t.width() &&
-    s.position().left + s.width() > t.position().left &&
-    s.position().top < t.position().top + t.height() &&
-    s.position().top + s.height() > t.position().top
-  ) {
-    // collision detected!
-    console.log("collision!");
-    return true;
-  }
-
-  // no collision
-  console.log("no collision");
-  return false;
-}
-
-    </script>
+    <img class="hide" id="level2" width="500" height="500" src="./level2.png" alt="level2">
     <script src="./final_app.js"></script>
 </body></html>
