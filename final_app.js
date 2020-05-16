@@ -1,7 +1,7 @@
 /*eslint-env browser*/
 var c = document.getElementById("maze");
 var ctx = c.getContext("2d");
-var img = document.getElementById("level2");
+var img = document.getElementById("level");
 ctx.drawImage(img, 0, 0);
 
 var sprite = document.getElementById('sprite');
@@ -16,7 +16,7 @@ window.onload = function () {
 function spawn() {
     left += 15;
     sprite.style.left = left + 'px';
-    up += 247;
+    up += 249;
     sprite.style.top = up + 'px';
 }
 
