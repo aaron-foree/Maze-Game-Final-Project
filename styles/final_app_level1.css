@@ -1,0 +1,19 @@
+#sprite {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url("/images/sprite.png");
+}
+
+#fireball1 {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-image: url("/images/fireball.png");
+    left: 281px;
+    top: 370px;
+}
+
+.hide {
+    display: none;
+}

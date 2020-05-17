@@ -1,0 +1,47 @@
+#sprite {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url("/images/sprite.png");
+}
+
+#fireball1 {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-image: url("/images/fireball.png");
+    left: 141px;
+    top: 380px;
+}
+
+#fireball2 {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-image: url("/images/fireball.png");
+    left: 288px;
+    top: 159px;
+}
+
+#fireball3 {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-image: url("/images/fireball.png");
+    left: 97px;
+    top: 200px;
+    transform: rotate(90deg);
+}
+
+#fireball4 {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-image: url("/images/fireball.png");
+    left: 309px;
+    top: 410px;
+}
+
+.hide {
+    display: none;
+}

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link REL="stylesheet" HREF="/styles/final_app_level3.css" />
+    <title>Level 3</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sprite"></div>
+        <div id="fireball1"></div>
+        <div id="fireball2"></div>
+        <div id="fireball3"></div>
+        <canvas id="maze" width="500" height="500"> </canvas>
+    </div>
+    <img class="hide" id="level" width="500" height="500" src="/images/level3.png" alt="level">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+        $(document).ready(function() {
+            function loop() {
+                $('#fireball1').animate({
+                    top: '+=90',
+                }, 1400, loop);
+                $('#fireball1').animate({
+                    top: '-=90',
+                }, 1400, loop);
+                $('#fireball2').animate({
+                    top: '-=90',
+                }, 1400, loop);
+                $('#fireball2').animate({
+                    top: '+=90',
+                }, 1400, loop);
+                $('#fireball3').animate({
+                    left: '+=90',
+                }, 1400, loop);
+                $('#fireball3').animate({
+                    left: '-=90',
+                }, 1400, loop);
+                $('#fireball4').animate({
+                    top: '-=90',
+                }, 1300, loop);
+                $('#fireball4').animate({
+                    top: '+=90',
+                }, 1300, loop);
+                $('#fireball5').animate({
+                    left: '+=90',
+                }, 1300, loop);
+                $('#fireball5').animate({
+                    left: '-=90',
+                }, 1300, loop);
+            }
+            loop();
+        });
+
+    </script>
+    <script src="/final_app.js"></script>
+</body>
+
+</html>
