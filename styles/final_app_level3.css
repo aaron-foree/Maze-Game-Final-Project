@@ -32,6 +32,14 @@
     top: 200px;
     transform: rotate(90deg);
 }
+#portal{
+    position: absolute;
+    width: 25px;
+    height: 37px;
+    left: 480px;
+    top: 240px;
+    background-image: url("/images/end_portal.png");
+}
 
 .hide {
     display: none;
