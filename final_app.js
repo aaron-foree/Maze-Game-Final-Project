@@ -58,27 +58,28 @@ function spawn() {
     sprite.style.top = up + 'px';
 }
 
+function reset() {
+    location.reload();
+    return;
+}
+
 function anim(e) {
 
     var mazeWall1 = ctx.getImageData(left - 9, up - 9, 1, 1);
     if (mazeWall1.data[2] == 105 && mazeWall1.data[1] == 18) {
-        location.reload();
-        return;
+        reset();
     }
     var mazeWall2 = ctx.getImageData(left + 17, up + 17, 1, 1);
     if (mazeWall2.data[2] == 105 && mazeWall2.data[1] == 18) {
-        location.reload();
-        return;
+        reset();
     }
     var mazeWall3 = ctx.getImageData(left - 9, up + 17, 1, 1);
     if (mazeWall3.data[2] == 105 && mazeWall3.data[1] == 18) {
-        location.reload();
-        return;
+        reset();
     }
     var mazeWall4 = ctx.getImageData(left + 17, up - 9, 1, 1);
     if (mazeWall4.data[2] == 105 && mazeWall4.data[1] == 18) {
-        location.reload();
-        return;
+        reset();
     }
     if (e.keyCode == 83) {
         up += 2;
