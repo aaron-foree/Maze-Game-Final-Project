@@ -1,5 +1,28 @@
 /*eslint-env browser*/
 /*eslint-env jquery*/
+
+var c = document.getElementById("maze");
+var ctx = c.getContext("2d");
+var img = document.getElementById("level");
+ctx.drawImage(img, 0, 0);
+
+var sprite = document.getElementById('sprite');
+
+var up = 0;
+var left = 0;
+
+window.onload = function () {
+    spawn();
+};
+
+
+function spawn() {
+    left += 15;
+    sprite.style.left = left + 'px';
+    up += 249;
+    sprite.style.top = up + 'px';
+}
+
 $(document).ready(function () {
     function loop() {
         $('#fireball1').animate({
@@ -35,59 +58,47 @@ $(document).ready(function () {
 
     }
     var $target = $("#sprite");
-    var $source1 = $("#fireball1");
-    var $source2 = $("#fireball2");
-    var $source3 = $("#fireball3");
-    var $source4 = $("#fireball4");
-    var $source5 = $("#fireball5");
+    var $source1 = $("#portal");
+    var $source2 = $("#fireball1");
+    var $source3 = $("#fireball2");
+    var $source4 = $("#fireball3");
+    var $source5 = $("#fireball4");
+    var $source6 = $("#fireball5");
 
-    function collide() {
-        if (fireCollision($source1, $target) == true) {
+    function firecollide() {
+        if (collision($source2, $target) == true || collision($source3, $target) == true || collision($source4, $target) == true || collision($source5, $target) == true || collision($source6, $target) == true) {
+            clearInterval(fc);
             reset();
             return;
         }
-        if (fireCollision($source2, $target) == true) {
-            reset();
-            return;
-        }
-        if (fireCollision($source3, $target) == true) {
-            reset();
-            return;
-        }
-        if (fireCollision($source4, $target) == true) {
-            reset();
-            return;
-        }
-        if (fireCollision($source5, $target) == true) {
-            reset();
-            return;
+
+    }
+
+    function portalcollide() {
+        if (collision($source1, $target) == true) {
+            clearInterval(pf);
+            var location = window.location.href
+            if (location.includes("level1")) {
+                window.location = "final_app_level2.html";
+            }
+            if (location.includes("level2")) {
+                window.location = "final_app_level3.html";
+            }
+            if (location.includes("level3")) {
+                window.location = "final_app_level4.html";
+            }
+            if (location.includes("level4")) {
+                window.location = "final_app_level5.html";
+            }
+            if (location.includes("level5")) {
+                window.location = "final_app_level1.html";
+            }
         }
     }
     loop();
-    setInterval(collide, 10);
+    var fc = setInterval(firecollide, 10);
+    var pf = setInterval(portalcollide, 10);
 });
-
-var c = document.getElementById("maze");
-var ctx = c.getContext("2d");
-var img = document.getElementById("level");
-ctx.drawImage(img, 0, 0);
-
-var sprite = document.getElementById('sprite');
-
-var up = 0;
-var left = 0;
-
-window.onload = function () {
-    spawn();
-};
-
-
-function spawn() {
-    left += 15;
-    sprite.style.left = left + 'px';
-    up += 249;
-    sprite.style.top = up + 'px';
-}
 
 function reset() {
     location.reload();
@@ -133,7 +144,7 @@ function anim(e) {
 document.onkeydown = anim;
 
 
-function fireCollision(s, t) {
+function collision(s, t) {
     if (
         s.position().left < t.position().left + t.width() &&
         s.position().left + s.width() > t.position().left &&

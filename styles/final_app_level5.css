@@ -51,7 +51,8 @@
     top: 363px;
     transform: rotate(90deg);
 }
-#portal{
+
+#portal {
     position: absolute;
     width: 25px;
     height: 37px;
