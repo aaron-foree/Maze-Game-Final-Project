@@ -32,8 +32,39 @@ $(document).ready(function () {
         $('#fireball5').animate({
             left: '-=90',
         }, 1300, loop);
+
+    }
+    var $target = $("#sprite");
+    var $source1 = $("#fireball1");
+    var $source2 = $("#fireball2");
+    var $source3 = $("#fireball3");
+    var $source4 = $("#fireball4");
+    var $source5 = $("#fireball5");
+
+    function collide() {
+        if (fireCollision($source1, $target) == true) {
+            reset();
+            return;
+        }
+        if (fireCollision($source2, $target) == true) {
+            reset();
+            return;
+        }
+        if (fireCollision($source3, $target) == true) {
+            reset();
+            return;
+        }
+        if (fireCollision($source4, $target) == true) {
+            reset();
+            return;
+        }
+        if (fireCollision($source5, $target) == true) {
+            reset();
+            return;
+        }
     }
     loop();
+    setInterval(collide, 10);
 });
 
 var c = document.getElementById("maze");
@@ -100,3 +131,16 @@ function anim(e) {
 }
 
 document.onkeydown = anim;
+
+
+function fireCollision(s, t) {
+    if (
+        s.position().left < t.position().left + t.width() &&
+        s.position().left + s.width() > t.position().left &&
+        s.position().top < t.position().top + t.height() &&
+        s.position().top + s.height() > t.position().top
+    ) {
+        return true;
+    }
+    return false;
+}
