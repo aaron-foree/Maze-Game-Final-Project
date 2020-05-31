@@ -111,6 +111,28 @@ function reset() {
 
 function anim(e) {
 
+    if (e.keyCode == 83) {
+        up += 2;
+        sprite.style.top = up + "px";
+    }
+    if (e.keyCode == 87) {
+        up -= 2;
+        sprite.style.top = up + "px";
+    }
+    if (e.keyCode == 68) {
+        left += 2;
+        sprite.style.left = left + "px";
+    }
+    if (e.keyCode == 65) {
+        left -= 2;
+        sprite.style.left = left + "px";
+    }
+    wallCollision();
+}
+document.onkeydown = anim;
+
+
+function wallCollision() {
     var mazeWall1 = ctx.getImageData(left - 9, up - 9, 1, 1);
     if (mazeWall1.data[2] == 105 && mazeWall1.data[1] == 18) {
         reset();
@@ -131,26 +153,7 @@ function anim(e) {
         reset();
         return;
     }
-    if (e.keyCode == 83) {
-        up += 2;
-        sprite.style.top = up + 'px';
-    }
-    if (e.keyCode == 87) {
-        up -= 2;
-        sprite.style.top = up + 'px';
-    }
-    if (e.keyCode == 68) {
-        left += 2;
-        sprite.style.left = left + 'px';
-    }
-    if (e.keyCode == 65) {
-        left -= 2;
-        sprite.style.left = left + 'px';
-    }
 }
-
-document.onkeydown = anim;
-
 
 function collision(s, t) {
     if (

@@ -2,14 +2,14 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    background-image: url("/images/sprite.png");
+    background-image: url("../images/sprite.png");
 }
 
 #fireball1 {
     position: absolute;
     width: 15px;
     height: 25px;
-    background-image: url("/images/fireball.png");
+    background-image: url("../images/fireball.png");
     left: 141px;
     top: 380px;
 }
@@ -18,7 +18,7 @@
     position: absolute;
     width: 15px;
     height: 25px;
-    background-image: url("/images/fireball.png");
+    background-image: url("../images/fireball.png");
     left: 288px;
     top: 159px;
 }
@@ -27,7 +27,7 @@
     position: absolute;
     width: 15px;
     height: 25px;
-    background-image: url("/images/fireball.png");
+    background-image: url("../images/fireball.png");
     left: 97px;
     top: 200px;
     transform: rotate(90deg);
@@ -37,7 +37,7 @@
     position: absolute;
     width: 15px;
     height: 25px;
-    background-image: url("/images/fireball.png");
+    background-image: url("../images/fireball.png");
     left: 309px;
     top: 410px;
 }
@@ -48,7 +48,7 @@
     height: 37px;
     left: 480px;
     top: 229px;
-    background-image: url("/images/end_portal.png");
+    background-image: url("../images/end_portal.png");
 }
 
 .hide {
