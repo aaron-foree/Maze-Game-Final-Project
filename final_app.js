@@ -66,7 +66,11 @@ $(document).ready(function () {
     var $source6 = $("#fireball5");
 
     function firecollide() {
-        if (collision($source2, $target) == true || collision($source3, $target) == true || collision($source4, $target) == true || collision($source5, $target) == true || collision($source6, $target) == true) {
+        if (collision($source2, $target) == true ||
+            collision($source3, $target) == true ||
+            collision($source4, $target) == true ||
+            collision($source5, $target) == true ||
+            collision($source6, $target) == true) {
             clearInterval(fc);
             reset();
             return;
@@ -110,18 +114,22 @@ function anim(e) {
     var mazeWall1 = ctx.getImageData(left - 9, up - 9, 1, 1);
     if (mazeWall1.data[2] == 105 && mazeWall1.data[1] == 18) {
         reset();
+        return;
     }
     var mazeWall2 = ctx.getImageData(left + 17, up + 17, 1, 1);
     if (mazeWall2.data[2] == 105 && mazeWall2.data[1] == 18) {
         reset();
+        return;
     }
     var mazeWall3 = ctx.getImageData(left - 9, up + 17, 1, 1);
     if (mazeWall3.data[2] == 105 && mazeWall3.data[1] == 18) {
         reset();
+        return;
     }
     var mazeWall4 = ctx.getImageData(left + 17, up - 9, 1, 1);
     if (mazeWall4.data[2] == 105 && mazeWall4.data[1] == 18) {
         reset();
+        return;
     }
     if (e.keyCode == 83) {
         up += 2;
